@@ -1,0 +1,2 @@
+body { padding-top: 70px; }
+div.post:not(:first-child) { border-top: 1px solid #ddd}
