@@ -3,9 +3,31 @@
 /* Directives */
 
 
-angular.module('blog.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
-    };
-  }]);
+angular.module('blog.directives', [])
+    .directive('onEnter', function () {
+        return {
+            restrict: 'A',
+            scope: {
+                onEnter: '&'
+            },
+            link: function (scope, element, attrs) {
+                element.bind('keypress', function (event) {
+                    if (event.keyCode === 13)
+                        scope.onEnter();
+                });
+            }
+        };
+    })
+    .directive('singlePost', function () {
+        return {
+            restrict: 'E',
+            template: '<div class="post"> \
+                            <h5>{{post.author}} <small>{{post.date | date: \'short\'}}</small></h5> \
+                            <p>{{post.text}}</p> \
+                        </div>', 
+            scope: {
+                post: '='
+            },
+            replace: true
+        };
+    });
