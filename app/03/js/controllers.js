@@ -15,7 +15,7 @@ angular.module('blog.controllers', [])
 
          var socket = io.connect(serverAddress);
          socket.on('post', function (data) {
-             $scope.$apply($scope.posts.unshift(data))                          
+             $scope.$apply($scope.posts.unshift(data))              
          });
 
          $scope.sendMessage = function (event) {
