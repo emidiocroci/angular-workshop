@@ -1,4 +1,4 @@
-# angular-workshop - Creiamo il nostro servizio di microblogging
+# Creiamo il nostro servizio di microblogging
 
 Il materiale utilizzato nel workshop è diviso in capitoli e nella sezione di ogni capitolo
 potrete trovare links di riferimento e per approfondire quanto fatto nel capitolo.
