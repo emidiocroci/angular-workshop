@@ -30,7 +30,31 @@
                 </form>
             </div>
         </nav>
-        <div ng-view>            
+        <div class="container" ng-controller="PostCtrl">
+            <div class="row">
+                <div class="col-md-3">
+                    <form name="newPost">
+                        <div class="input-group">
+                            <input type="text" class="form-control" on-enter="sendMessage()" ng-model="newPostText" required>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="sendMessage()" ng-disabled="newPost.$invalid">
+                                    <i class="glyphicon glyphicon-send"></i>
+                                </button>
+                            </span>
+                        </div>                        
+                    </form>
+                </div>
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Posts</h3>
+                        </div>
+                        <div class="panel-body">
+                            <single-post ng-repeat="post in posts | filter:filtro " post="post" ></single-post>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="../lib/angular/angular.js"></script>
         <script src="../lib/angular-route/angular-route.js"></script>
@@ -40,33 +64,5 @@
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/directives.js"></script>
-        <script type="text/ng-template" id="./partials/posts.html">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <form name="newPost">
-                            <div class="input-group">
-                                <input type="text" class="form-control" on-enter="sendMessage()" ng-model="newPostText" required>
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="sendMessage()" ng-disabled="newPost.$invalid">
-                                        <i class="glyphicon glyphicon-send"></i>
-                                    </button>
-                                </span>
-                            </div>                        
-                        </form>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Posts</h3>
-                            </div>
-                            <div class="panel-body">
-                                <single-post ng-repeat="post in posts | filter:filtro " post="post" ></single-post>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </script>
     </body>
 </html>
