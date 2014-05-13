@@ -4,3 +4,4 @@
 - (?) stop caricamento controller in caso errore caricamento posts
 
 ## Links utili
+[Routing][https://docs.angularjs.org/api/ngRoute/provider/$routeProvider]
