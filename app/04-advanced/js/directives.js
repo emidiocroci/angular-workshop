@@ -6,23 +6,27 @@
 angular.module('blog.directives', [])
     .directive('onEnter', function () {
         return {
-            restrict: ''//TODO,
+            restrict: 'A',
             scope: {
-                //TODO
+                onEnter: '&'
             },
             link: function (scope, element, attrs) {
                 element.bind('keypress', function (event) {
-                    //TODO
+                    if (event.keyCode === 13)
+                        scope.onEnter();
                 });
             }
         };
     })
     .directive('singlePost', function () {
         return {
-            restrict: ''//TODO,
-            template: ''//TODO, 
+            restrict: 'E',
+            template: '<div class="post"> \
+                            <h5>{{post.author}} <small>{{post.date | date: \'short\'}}</small></h5> \
+                            <p>{{post.text}}</p> \
+                        </div>', 
             scope: {
-                
+                post: '='
             },
             replace: true
         };

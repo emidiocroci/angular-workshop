@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="blog" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="blog" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="blog" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="blog" class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -37,11 +37,11 @@
                         <div class="input-group">
                             <input type="text" class="form-control" on-enter="sendMessage()" ng-model="newPostText" required>
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="" ng-disabled="">
+                                <button type="button" class="btn btn-default" ng-click="sendMessage()" ng-disabled="newPost.$invalid">
                                     <i class="glyphicon glyphicon-send"></i>
                                 </button>
                             </span>
-                        </div>
+                        </div>                        
                     </form>
                 </div>
                 <div class="col-md-9">
@@ -50,10 +50,7 @@
                             <h3 class="panel-title">Posts</h3>
                         </div>
                         <div class="panel-body">
-                            <div ng-repeat="post in posts | filter:filtro " class="post">
-                                <h5>{{post.author}} <small>{{post.date | date: 'short'}}</small></h5>
-                                <p>{{post.text}}</p>
-                            </div>
+                            <single-post ng-repeat="post in posts | filter:filtro " post="post" ></single-post>                            
                         </div>
                     </div>
                 </div>

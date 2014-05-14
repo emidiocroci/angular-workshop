@@ -33,16 +33,14 @@
         <div class="container" ng-controller="PostCtrl">
             <div class="row">
                 <div class="col-md-3">
-                    <form name="newPost">
-                        <div class="input-group">
-                            <input type="text" class="form-control" on-enter="sendMessage()" ng-model="newPostText" required>
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="" ng-disabled="">
-                                    <i class="glyphicon glyphicon-send"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default">
+                                <i class="glyphicon glyphicon-send"></i>
+                            </button>
+                        </span>
+                    </div>
                 </div>
                 <div class="col-md-9">
                     <div class="panel panel-default">

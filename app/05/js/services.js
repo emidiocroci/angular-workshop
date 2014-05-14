@@ -8,6 +8,6 @@
 angular.module('blog.services', [])
     .service('globals', function () {
         this.username = 'emidio';
-        this.serverAddress = 'http://localhost:3000';
+        this.serverAddress = 'http://angularworkshop-degobah.rhcloud.com';
     })
     .value('version', '0.1');

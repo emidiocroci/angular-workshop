@@ -15,17 +15,13 @@ angular.module('blog.controllers', [])
 
         var socket = io.connect(serverAddress);
         socket.on('post', function (data) {
-            //TODO
+            $scope.$apply($scope.posts.unshift(data))              
         });
 
-        /*
-        TODO: devo usare la funzione qui sotto per inviare il post alla pressione su enter...
-        function (event) {
-            if (event.keyCode &&
-                event.keyCode === 13 &&
-                event.currentTarget.value) {
-                socket.emit('post', { text: event.currentTarget.value , author: 'emidio', date: new Date() });
-                event.currentTarget.value = '';
+        $scope.sendMessage = function () {                        
+            if ($scope.newPost.$valid) {
+                socket.emit('post', { text: $scope.newPostText, author: 'emidio', date: new Date() });
+                $scope.newPostText = '';
             }
-        };*/
+        };
     }]);
