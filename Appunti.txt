@@ -1,0 +1,27 @@
+# Appunti esercizi
+
+## Es. 01
+    - (definizione di modulo e perché della sintassi con array per injection)
+    - get dei posts dal server (accenno alle promises)
+    - aggiungere filtro ($rootScope e proto. inheritance con $scope)
+    - ng-repeat e bind con i post 
+        - track per ng-repeat -> funzione di mapping tra elemento della collezione e elemento del dom. Nel caso non si abbia un campo univoco si può utilizzare la funzione $id() oppure $index 
+## Es. 02
+    - inserimento socket.io
+    - gestione invio socket
+    - ricezione post da socket (nota su $apply) 
+        1. The expression is executed using the $eval() method.
+        2. Any exceptions from the execution of the expression are forwarded to the $exceptionHandler service.
+        3. The watch listeners are fired immediately after the expression was executed using the $digest() method.   
+## Es. 03
+    - aggiungere validazione (form + campo required + check nel controller)
+    - aggiungere direttiva per onEnter 
+        - (camelCase in camel-case html case insensitive)
+        - compilazione + linking
+    - aggiungere direttiva per visualizzazione singolo post
+## Es. 04
+    - aggiungere servizio globals con username e server (differenze factory-service)
+## Es. 05    
+    - aggiungere routing
+    - (?) aggiungere stop caricamento controller in caso errore caricamento posts
+    - (?) socket.io su servizio    
