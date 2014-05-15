@@ -17,22 +17,13 @@ angular.module('blog.controllers', [])
 
         var socket = io.connect(serverAddress);
         socket.on('post', function (data) {
-            $scope.$apply($scope.posts.unshift(data));
+            $scope.$apply($scope.posts.unshift(data))
         });
 
-        $scope.sendMessage = function (event) {
-            if (event.keyCode &&
-                event.keyCode === 13 &&
-                $scope.newPost.$valid) {
-                socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });
-                $scope.newPostText = '';
-            }
-        };
-
-        $scope.sendMessageClick = function () {
+        $scope.sendMessage = function () {
             if ($scope.newPost.$valid) {
                 socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });
                 $scope.newPostText = '';
             }
-        }
+        };
     }]);
