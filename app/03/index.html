@@ -37,7 +37,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" on-enter="sendMessage()" ng-model="newPostText" required>
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="" ng-disabled="">
+                                <button type="button" class="btn btn-default" ng-click="sendMessage()" ng-disabled="newPost.$invalid">
                                     <i class="glyphicon glyphicon-send"></i>
                                 </button>
                             </span>
