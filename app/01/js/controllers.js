@@ -7,7 +7,7 @@ angular.module('blog.controllers', [])
         var serverAddress = 'http://angularworkshop-degobah.rhcloud.com';
         $http.get(serverAddress + '/posts')
             .success(function (data) {
-                //TODO
+                //TODO data è il nostro array contenente i post
             })
             .error(function (data) {
                 alert('error');
