@@ -22,13 +22,7 @@ cd angular-workshop
 ```
 ## Eseguire l'applicazione
 
-Cercheremo di eseguire l'applicazione direttamente da file system. In caso di problemi, il modo più semplice per avviarla (con nodejs installato) è:
-
-```
-npm start
-```
-
-L'applicazione sarà disponibile all'indirizzo `http://localhost:8000/app/index.html`.
+Aprire il file index.html con il proprio browser l'applicazione direttamente da file system.
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

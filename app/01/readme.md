@@ -1,9 +1,8 @@
 # Es. 01
-- definizione controller
-- inject del servizio http 
-- get dei posts dal server 
-- ng-repeat e bind con i post 
-- filtro dei posts
+- definizione di controller (*)
+- salavataggio dei posts ricevuti sullo scope
+- utilizzo di ng-repeat per visualizzazione post
+- filtro dei post con casella di ricerca
 
 ## Links utili
 [Ereditarietà scope][https://github.com/angular/angular.js/wiki/Understanding-Scopes]

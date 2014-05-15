@@ -1,6 +1,8 @@
 # Es. 02
-- inserimento socket.io
-- gestione invio su socket
-- ricezione post da socket
+- ricezione di un messaggio dal socket
+- invio di un messaggio sul socket
+- validazione del form
+- gestione del click
+- abilitazione / disabilitazione elementi
 
 ## Links utili
