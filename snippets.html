@@ -1,0 +1,94 @@
+<html ng-app>
+<head>
+</head>
+<body>
+    <div ng-controller="SimpleCtrl">
+        <ul>
+            <li ng-repeat="cust in customers">
+                {{cust.name}} - {{cust.city}}
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        function SimpleCtrl($scope) {
+            $scope.customers = [
+                { name: 'Lemmy Kilmister', city: 'New York'},
+                { name: 'Joh Doe', city: 'Atlanta'},
+                { name: 'Mark Smith', city: 'Los Angeles'}];   
+        }
+    </script>
+</body>
+
+<script>
+    app.directive('ngSparkline', function() {
+      return {
+        restrict: 'A',
+        scope: {
+          ngCity: '@'
+        },
+        template: '<div class="sparkline"><h4>Weather for {{ngCity}}</h4></div>',
+        link: function(scope, iElement, iAttrs) {
+          // get weather details
+        }
+      }
+    });
+</script>
+
+<script>
+    angular.
+     module('myServiceModule', []).
+      controller('MyController', ['$scope','notify', function ($scope, notify) {
+        $scope.callNotify = function(msg) {
+          notify(msg);
+        };
+      }]).
+     factory('notify', ['$window', function(win) {
+        var msgs = [];
+        return function(msg) {
+          msgs.push(msg);
+          if (msgs.length == 3) {
+            win.alert(msgs.join("\n"));
+            msgs = [];
+          }
+        };
+      }]);
+</script>
+
+<script>
+    //service style, probably the simplest one
+    myApp
+        controller('MyController', ['$scope','helloWorldFromService', function ($scope, service) {
+            $scope.sayHello = function () {
+                service.sayCiao();
+            };
+        }]).
+        .service('helloWorldFromService', function() {
+            this.sayHello = function() {
+                return "Hello, World!";
+            };
+            this.sayCiao = function() {
+                return "Ciao, Mondo!";  
+            }
+    });
+</script>
+
+<script>
+    var sampleApp = angular.module('phonecatApp', []);
+  
+    sampleApp .config(['$routeProvider',
+      function($routeProvider) {
+        $routeProvider.
+          when('/addOrder', {
+            templateUrl: 'templates/add-order.html',
+            controller: 'AddOrderController'
+          }).
+          when('/showOrders', {
+            templateUrl: 'templates/show-orders.html',
+            controller: 'ShowOrdersController'
+          }).
+          otherwise({
+            redirectTo: '/addOrder'
+          });
+      }]);
+</script>
