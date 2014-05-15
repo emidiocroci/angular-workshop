@@ -25,7 +25,7 @@ angular.module('blog.controllers', [])
                 event.keyCode === 13 &&
                 $scope.newPost.$valid) {
                 socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });
-                event.currentTarget.value = '';
+                $scope.newPostText = '';
             }
         };
     }]);

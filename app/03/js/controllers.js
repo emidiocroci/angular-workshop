@@ -22,7 +22,8 @@ angular.module('blog.controllers', [])
 
         $scope.sendMessage = function () {
             if ($scope.newPost.$valid) {
-                socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });                
+                socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });
+                $scope.newPostText = '';
             }
         };
     }]);

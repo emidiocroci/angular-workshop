@@ -12,10 +12,8 @@ angular.module('blog.directives', [])
             },
             link: function (scope, element, attrs) {
                 element.bind('keypress', function (event) {
-                    if (event.keyCode === 13) {
+                    if (event.keyCode === 13)
                         scope.onEnter();
-                        element.value = '';
-                    }
                 });
             }
         };
