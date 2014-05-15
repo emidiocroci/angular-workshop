@@ -12,8 +12,10 @@ angular.module('blog.directives', [])
             },
             link: function (scope, element, attrs) {
                 element.bind('keypress', function (event) {
-                    if (event.keyCode === 13)
+                    if (event.keyCode === 13) {
                         scope.onEnter();
+                        element.value = '';
+                    }
                 });
             }
         };
@@ -24,7 +26,7 @@ angular.module('blog.directives', [])
             template: '<div class="post"> \
                             <h5>{{post.author}} <small>{{post.date | date: \'short\'}}</small></h5> \
                             <p>{{post.text}}</p> \
-                        </div>', 
+                        </div>',
             scope: {
                 post: '='
             },

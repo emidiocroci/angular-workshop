@@ -14,10 +14,10 @@ angular.module('blog.controllers', [])
         //TODO
         var socket = io.connect();
         socket.on('post', function (data) {
-            $scope.$apply($scope.posts.unshift(data))              
+            $scope.$apply($scope.posts.unshift(data))
         });
 
-        $scope.sendMessage = function () {                        
+        $scope.sendMessage = function () {
             if ($scope.newPost.$valid) {
                 //TODO
                 socket.emit('post', { text: $scope.newPostText, author: , date: new Date() });

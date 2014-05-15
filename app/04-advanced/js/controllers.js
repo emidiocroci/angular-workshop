@@ -5,6 +5,8 @@
 angular.module('blog.controllers', [])
     .controller('PostCtrl', ['$scope','$http', function($scope, $http) {
         var serverAddress = 'http://angularworkshop-degobah.rhcloud.com';
+        var username = 'guest';
+
         $http.get(serverAddress + '/posts')
             .success(function (data) {
                 $scope.posts = data;
@@ -15,12 +17,12 @@ angular.module('blog.controllers', [])
 
         var socket = io.connect(serverAddress);
         socket.on('post', function (data) {
-            $scope.$apply($scope.posts.unshift(data))              
+            $scope.$apply($scope.posts.unshift(data))
         });
 
-        $scope.sendMessage = function () {                        
+        $scope.sendMessage = function () {
             if ($scope.newPost.$valid) {
-                socket.emit('post', { text: $scope.newPostText, author: 'emidio', date: new Date() });
+                socket.emit('post', { text: $scope.newPostText, author: username, date: new Date() });
                 $scope.newPostText = '';
             }
         };
